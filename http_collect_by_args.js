@@ -19,12 +19,13 @@ function action(args) {
             collection.map(function (data) {console.log(data.toString().replace(/\r?\n|\r/g,""))});
         }
     }
-    http.get(args[2], function (res) {
+
+    http.get(args[2], function(res) {
         res.pipe(bl(function (err, data) {
             // `data` is a complete Buffer object containing the full data
             collection[0] = data.toString();
         }));
-        res.on('end', is_collected);
+        res.on('end',is_collected);
     });
     http.get(args[3], function(res) {
         res.pipe(bl(function (err, data) {
