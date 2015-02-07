@@ -42,8 +42,8 @@ function action(args) {
         res.on('end',is_collected);
     });
     /*
-    args.slice(2,args.length).map(function (the_url) {
-        http.get(the_url, function(res) {
+    args.slice(2,args.length).map(function (the_port) {
+        http.get(the_port, function(res) {
             res.pipe(bl(function (err, data) {
                 // `data` is a complete Buffer object containing the full data
                 collection[i++] = data.toString();
